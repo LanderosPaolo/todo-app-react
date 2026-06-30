@@ -42,4 +42,4 @@ Próximas funcionalidades:
 
 ## 👨‍💻 Autor
 
-Desarrollado por **Paolo Landeros** como parte de su proceso de reactivación profesional y construcción de portafolio.
+Desarrollado por **Paolo Landeros**
