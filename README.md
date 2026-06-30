@@ -1,16 +1,45 @@
-# React + Vite
+# 📝 Todo App React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación de gestión de tareas desarrollada con React como parte de mi proceso de reactivación y actualización como desarrollador Full Stack.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- ✅ Agregar nuevas tareas.
+- ✅ Validar tareas vacías.
+- ✅ Mostrar la lista de tareas.
+- ✅ Marcar tareas como completadas.
+- ✅ Eliminar tareas.
 
-## React Compiler
+## 🛠️ Tecnologías utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- JavaScript (ES6+)
+- CSS
 
-## Expanding the ESLint configuration
+## 📚 Objetivo del proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Este proyecto forma parte de mi proceso de aprendizaje y tiene como objetivo reforzar conceptos fundamentales de React, como:
+
+- Manejo de estado con `useState`.
+- Renderizado de listas con `map()`.
+- Actualización inmutable del estado.
+- Manejo de eventos.
+- Renderizado condicional.
+
+## 📈 Estado del proyecto
+
+🚧 En desarrollo.
+
+Próximas funcionalidades:
+
+- Editar tareas.
+- Filtros (Todas, Pendientes y Completadas).
+- Contador de tareas.
+- Persistencia con Local Storage.
+- Mejoras de diseño y experiencia de usuario.
+- Deploy de la aplicación.
+
+## 👨‍💻 Autor
+
+Desarrollado por **Paolo Landeros** como parte de su proceso de reactivación profesional y construcción de portafolio.
