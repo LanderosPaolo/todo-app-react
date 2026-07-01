@@ -5,6 +5,12 @@ function App() {
   const [tareas, setTareas] = useState([]);
   const [texto, setTexto] = useState("");
 
+  const totalTareas = tareas.length
+
+  const tareasCompletadas = tareas.filter(tarea => tarea.completada).length
+
+  const tareasPendientes = totalTareas - tareasCompletadas;
+
   const escucharInput = (e) => {
     setTexto(e.target.value);
   };
@@ -20,6 +26,8 @@ function App() {
       };
 
       setTareas([...tareas, nuevaTarea]);
+
+      console.log("Tarea agregada")
 
       setTexto("");
     } else {
@@ -41,8 +49,6 @@ function App() {
     }))
   }
 
-  console.log(tareas)
-
   return (
     <>
       <h1>TodoApp</h1>
@@ -60,6 +66,13 @@ function App() {
           <button onClick={() => eliminarTarea(t.id)}>Eliminar</button>
         </div>
       ))}
+
+        <div>
+          <p>Total: {totalTareas}</p>
+          <p>Completadas: {tareasCompletadas}</p>
+          <p>Pendientes: {tareasPendientes}</p>
+        </div>
+
     </>
   );
 }
