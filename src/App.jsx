@@ -5,9 +5,9 @@ function App() {
   const [tareas, setTareas] = useState([]);
   const [texto, setTexto] = useState("");
 
-  const totalTareas = tareas.length
+  const totalTareas = tareas.length;
 
-  const tareasCompletadas = tareas.filter(tarea => tarea.completada).length
+  const tareasCompletadas = tareas.filter((tarea) => tarea.completada).length;
 
   const tareasPendientes = totalTareas - tareasCompletadas;
 
@@ -27,7 +27,7 @@ function App() {
 
       setTareas([...tareas, nuevaTarea]);
 
-      console.log("Tarea agregada")
+      console.log("Tarea agregada");
 
       setTexto("");
     } else {
@@ -35,19 +35,27 @@ function App() {
     }
   };
 
+  const manejarEnter = (e) => {
+    if (e.key === "Enter") {
+      agregarTarea();
+    }
+  };
+
   const eliminarTarea = (id) => {
-    const nuevasTareas = tareas.filter(tarea => tarea.id !== id)
-    setTareas(nuevasTareas)
-  }
+    const nuevasTareas = tareas.filter((tarea) => tarea.id !== id);
+    setTareas(nuevasTareas);
+  };
 
   const cambiarEstado = (id) => {
-    setTareas(tareas.map(tarea => {
-      if (tarea.id === id) {
-        return {...tarea, completada: !tarea.completada}
-      }
-      return tarea
-    }))
-  }
+    setTareas(
+      tareas.map((tarea) => {
+        if (tarea.id === id) {
+          return { ...tarea, completada: !tarea.completada };
+        }
+        return tarea;
+      }),
+    );
+  };
 
   return (
     <>
@@ -56,23 +64,32 @@ function App() {
         type="text"
         value={texto}
         onChange={escucharInput}
+        onKeyDown={manejarEnter}
         placeholder="Escribe tu tarea"
       />
       <button onClick={agregarTarea}>Agregar</button>
       {tareas.map((t) => (
-        <div key={t.id} style={{textDecoration: t.completada? 'line-through' : 'none'}}>
-          <input type="checkbox" id={t.id} name={t.texto} checked={t.completada} onChange={() => cambiarEstado(t.id)}/>
+        <div
+          key={t.id}
+          style={{ textDecoration: t.completada ? "line-through" : "none" }}
+        >
+          <input
+            type="checkbox"
+            id={t.id}
+            name={t.texto}
+            checked={t.completada}
+            onChange={() => cambiarEstado(t.id)}
+          />
           <label htmlFor={t.id}>{t.texto}</label>
           <button onClick={() => eliminarTarea(t.id)}>Eliminar</button>
         </div>
       ))}
 
-        <div>
-          <p>Total: {totalTareas}</p>
-          <p>Completadas: {tareasCompletadas}</p>
-          <p>Pendientes: {tareasPendientes}</p>
-        </div>
-
+      <div>
+        <p>Total: {totalTareas}</p>
+        <p>Completadas: {tareasCompletadas}</p>
+        <p>Pendientes: {tareasPendientes}</p>
+      </div>
     </>
   );
 }
